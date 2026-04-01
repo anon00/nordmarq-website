@@ -124,8 +124,8 @@ const Hero = () => {
            style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
       
       {/* Background Image Overlay */}
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black to-black"></div>
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black"></div>
 
       <div className="relative max-w-7xl mx-auto px-6 w-full">
         <motion.div 
@@ -166,9 +166,9 @@ const Hero = () => {
 const TrustBar = () => {
   const trustPoints = [
     { icon: <ShieldCheck className="w-5 h-5" />, text: "Assurance Responsabilité Civile" },
-    { icon: <Zap className="w-5 h-5" />, text: "Matériaux Conformes & Durables" },
-    { icon: <Clock className="w-5 h-5" />, text: "Planification Rigoureuse" },
-    { icon: <Construction className="w-5 h-5" />, text: "Exécution Propre & Normée" },
+    { icon: <Zap className="w-5 h-5" />, text: "Intervention Rapide selon Secteur" },
+    { icon: <Clock className="w-5 h-5" />, text: "Planification selon Météo" },
+    { icon: <Construction className="w-5 h-5" />, text: "Adaptation aux Contraintes du Site" },
   ];
 
   return (
@@ -222,7 +222,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-32 bg-white">
+    <section id="services" className="py-28 md:py-44 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">
           <div className="max-w-2xl">
@@ -277,7 +277,7 @@ const Results = () => {
   ];
 
   return (
-    <section className="py-32 md:py-48 bg-black overflow-hidden">
+    <section className="py-36 md:py-52 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
@@ -345,7 +345,7 @@ const Process = () => {
   ];
 
   return (
-    <section id="process" className="py-32 md:py-48 bg-white">
+    <section id="process" className="py-24 md:py-40 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-24">
           <span className="text-nord-orange font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-6 block">Méthode de travail</span>
@@ -379,7 +379,7 @@ const Markets = () => {
   ];
 
   return (
-    <section id="markets" className="py-32 bg-zinc-950">
+    <section id="markets" className="py-28 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-6">
         <div className="bg-black p-12 md:p-20 border border-white/5 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-nord-orange/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
@@ -427,11 +427,11 @@ const WhyUs = () => {
   ];
 
   return (
-    <section className="py-24 md:py-48 bg-white">
+    <section className="py-20 md:py-40 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-px bg-black/5 border border-black/5">
           {reasons.map((r, i) => (
-            <div key={i} className="flex flex-col gap-10 p-12 bg-white hover:bg-black group transition-all duration-500">
+            <div key={i} className="flex flex-col gap-10 p-10 md:p-14 bg-white hover:bg-black group transition-all duration-500">
               <div className="w-16 h-16 bg-black text-nord-orange flex items-center justify-center group-hover:bg-white transition-colors">
                 {r.icon}
               </div>
@@ -447,9 +447,33 @@ const WhyUs = () => {
   );
 };
 
+const Presence = () => {
+  return (
+    <section className="py-16 bg-zinc-950 border-y border-white/5">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+          <div className="max-w-2xl">
+            <h3 className="text-white font-black uppercase tracking-widest text-xs mb-4 flex items-center gap-3">
+              <div className="w-8 h-px bg-nord-orange"></div>
+              Ancrage Local
+            </h3>
+            <p className="text-white/60 text-lg font-light leading-relaxed">
+              Entreprise locale basée à <span className="text-white font-medium">Laval</span>, NordMarq propose un service orienté commercial et industriel. Notre approche structurée et rigoureuse garantit un travail exécuté avec précision et constance sur chaque chantier.
+            </p>
+          </div>
+          <div className="flex gap-4 shrink-0">
+            <div className="px-6 py-4 border border-white/10 text-white/40 text-[10px] font-black uppercase tracking-widest">Laval</div>
+            <div className="px-6 py-4 border border-white/10 text-white/40 text-[10px] font-black uppercase tracking-widest">Rive-Nord</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const ServiceArea = () => {
   return (
-    <section className="py-32 bg-black relative overflow-hidden">
+    <section className="py-36 bg-black relative overflow-hidden">
       {/* Abstract Map Background */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <svg width="100%" height="100%" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -471,9 +495,11 @@ const ServiceArea = () => {
             <div className="grid sm:grid-cols-2 gap-8">
               {[
                 "Laval & Blainville",
-                "Boisbriand & St-Eustache",
+                "Boisbriand & Rosemère",
                 "Terrebonne & Mascouche",
-                "Mirabel & Grand Montréal"
+                "Sainte-Thérèse & Mirabel",
+                "Saint-Eustache & Bois-des-Filion",
+                "Grand Montréal & Rive-Nord"
               ].map((area, i) => (
                 <div key={i} className="flex items-center gap-4 text-white group">
                   <div className="w-2 h-2 bg-nord-orange group-hover:scale-150 transition-transform"></div>
@@ -516,7 +542,11 @@ const FAQ = () => {
     },
     {
       q: "Faites-vous du marquage intérieur (entrepôts) ?",
-      a: "Oui, nous sommes spécialisés dans le marquage d'entrepôts et d'usines, utilisant des produits adaptés aux environnements intérieurs pour une visibilité et une sécurité accrues."
+      a: "Oui, nous sommes spécialisés dans le marquage d'entrepôts et d'usines, utilisant des produits adaptés aux environnements intérieurs pour une visibilité et une sécurité accrues. Nous nous adaptons aux contraintes de votre site pour minimiser les arrêts d'opérations."
+    },
+    {
+      q: "Intervenez-vous de nuit ou la fin de semaine ?",
+      a: "Pour les clients commerciaux et industriels, nous offrons des plages horaires flexibles, incluant le soir et la fin de semaine, afin de ne pas perturber vos activités ou le flux de vos clients."
     },
     {
       q: "Pouvez-vous effacer d'anciennes lignes ?",
@@ -664,9 +694,17 @@ const Footer = () => {
                 NORD<span className="text-nord-orange">MARQ</span>
               </span>
             </div>
-            <p className="text-white/40 max-w-md font-light leading-relaxed mb-12 text-lg">
-              Expertise en marquage de surfaces commerciales et industrielles. Nous servons Laval, la Rive-Nord et le Grand Montréal avec précision et durabilité.
+            <p className="text-white/80 font-black uppercase tracking-[0.2em] text-[10px] mb-6">
+              Marquage commercial à Laval et sur la Rive-Nord
             </p>
+            <p className="text-white/40 max-w-md font-light leading-relaxed mb-12 text-lg">
+              Expertise en marquage de surfaces commerciales et industrielles. Nous servons Laval, Blainville, Terrebonne, Boisbriand et le Grand Montréal avec précision et durabilité.
+            </p>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 mb-12">
+              {['Stationnement', 'Entrepôts', 'Voies d’incendie', 'Marquage industriel'].map((kw) => (
+                <span key={kw} className="text-[10px] font-black uppercase tracking-widest text-white/20">{kw}</span>
+              ))}
+            </div>
             <div className="flex gap-6">
               <div className="w-12 h-12 border border-white/10 flex items-center justify-center text-white/40 hover:text-nord-orange hover:border-nord-orange transition-all cursor-pointer group">
                 <span className="text-xs font-black group-hover:scale-110 transition-transform">IN</span>
@@ -733,6 +771,7 @@ export default function App() {
       <Process />
       <Markets />
       <WhyUs />
+      <Presence />
       <ServiceArea />
       <FAQ />
       <QuoteSection />
