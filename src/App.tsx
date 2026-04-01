@@ -41,11 +41,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-black/95 backdrop-blur-md py-4 shadow-2xl' : 'bg-transparent py-8'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-black/95 backdrop-blur-md py-4 shadow-2xl' : 'bg-transparent py-6 md:py-8'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-nord-orange flex items-center justify-center font-black text-black text-xl">N</div>
-          <span className="text-2xl font-black tracking-tighter text-white">
+          <div className="w-10 h-10 bg-nord-orange flex items-center justify-center font-black text-black text-xl shrink-0">N</div>
+          <span className="text-xl md:text-2xl font-black tracking-tighter text-white">
             NORD<span className="text-nord-orange">MARQ</span>
           </span>
         </div>
@@ -65,14 +65,20 @@ const Navbar = () => {
             href="#quote" 
             className="bg-nord-orange text-white px-8 py-3 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all"
           >
-            Soumission
+            Estimation
           </a>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-white p-2" onClick={() => setIsOpen(!isOpen)} aria-label="Menu">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <div className="hidden xs:flex flex-col items-end mr-2">
+            <span className="text-[8px] font-black text-nord-orange uppercase tracking-widest leading-none">Laval</span>
+            <span className="text-[8px] font-black text-white/40 uppercase tracking-widest leading-none mt-1">Rive-Nord</span>
+          </div>
+          <button className="text-white p-2" onClick={() => setIsOpen(!isOpen)} aria-label="Menu">
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -112,7 +118,7 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-32 pb-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-48 pb-24 md:pt-32 md:pb-32">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
@@ -128,23 +134,23 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="max-w-4xl"
         >
-          <div className="flex items-center gap-4 mb-10">
+          <div className="flex items-center gap-4 mb-8 md:mb-10">
             <div className="h-[1px] w-12 bg-nord-orange"></div>
-            <span className="text-nord-orange font-mono text-[10px] font-black uppercase tracking-[0.5em]">Service Professionnel</span>
+            <span className="text-nord-orange font-mono text-[10px] font-black uppercase tracking-[0.5em]">Laval • Rive-Nord • Grand Montréal</span>
           </div>
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-white leading-[0.95] mb-10 tracking-tighter uppercase">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white leading-[1.1] md:leading-[0.95] mb-8 md:mb-10 tracking-tighter uppercase">
             MARQUAGE<br />
-            <span className="text-nord-orange">COMMERCIAL.</span>
+            <span className="text-nord-orange">PROFESSIONNEL.</span>
           </h1>
-          <p className="text-lg md:text-2xl text-white/60 mb-14 font-light leading-relaxed max-w-2xl">
-            Solutions de traçage de lignes durables pour stationnements et entrepôts. Nous servons Longueuil et la Rive-Sud avec précision.
+          <p className="text-base md:text-2xl text-white/60 mb-10 md:mb-14 font-light leading-relaxed max-w-2xl">
+            Traçage de lignes durable pour stationnements commerciaux et entrepôts industriels. Une exécution rigoureuse adaptée aux besoins des entreprises de Laval et de la Rive-Nord.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6">
-            <a href="#quote" className="group bg-nord-orange text-white px-12 py-6 font-black uppercase tracking-widest flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-all">
-              Soumission Gratuite
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
+            <a href="#quote" className="group bg-nord-orange text-white px-10 md:px-12 py-5 md:py-6 font-black uppercase tracking-widest flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-all text-xs md:text-sm">
+              Demander une estimation
               <MoveRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </a>
-            <a href="#services" className="px-12 py-6 border border-white/20 text-white font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
+            <a href="#services" className="px-10 md:px-12 py-5 md:py-6 border border-white/20 text-white font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-white/10 transition-all text-xs md:text-sm">
               Nos Services
             </a>
           </div>
@@ -161,7 +167,7 @@ const TrustBar = () => {
   const trustPoints = [
     { icon: <ShieldCheck className="w-5 h-5" />, text: "Assurance Complète" },
     { icon: <Clock className="w-5 h-5" />, text: "Respect des Échéanciers" },
-    { icon: <MapPin className="w-5 h-5" />, text: "Service Local (Rive-Sud)" },
+    { icon: <MapPin className="w-5 h-5" />, text: "Laval & Rive-Nord" },
     { icon: <CheckCircle2 className="w-5 h-5" />, text: "Qualité Industrielle" },
   ];
 
@@ -250,39 +256,45 @@ const Services = () => {
   );
 };
 
-const Impact = () => {
+const Results = () => {
   const benefits = [
     {
-      title: "Sécurité Accrue",
-      desc: "Des lignes claires réduisent les risques d'accidents et guident efficacement les usagers.",
-      image: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?q=80&w=1000&auto=format&fit=crop"
+      title: "Sécurité & Conformité",
+      desc: "Des lignes nettes réduisent les risques d'accidents et assurent le respect des normes de sécurité en vigueur.",
     },
     {
-      title: "Optimisation d'Espace",
-      desc: "Maximisez le nombre de cases de stationnement et améliorez le flux de circulation.",
-      image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1000&auto=format&fit=crop"
+      title: "Circulation Optimisée",
+      desc: "Maximisez l'utilisation de votre surface et améliorez la fluidité du trafic pour vos clients et employés.",
+    },
+    {
+      title: "Image Professionnelle",
+      desc: "Un marquage impeccable renforce instantanément le sérieux et l'image de marque de votre établissement.",
+    },
+    {
+      title: "Zones Mieux Définies",
+      desc: "Délimitation claire des zones de marche, de chargement et des espaces de stationnement réservés.",
     }
   ];
 
   return (
-    <section className="py-32 bg-black overflow-hidden">
+    <section className="py-32 md:py-48 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
-            <span className="text-nord-orange font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-6 block">Impact & Résultats</span>
+            <span className="text-nord-orange font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-6 block">Résultats visés sur le terrain</span>
             <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[0.95] mb-10 uppercase">
-              VISIBILITÉ<br /><span className="text-nord-orange">SANS COMPROMIS.</span>
+              CE QU'UN MARQUAGE<br /><span className="text-nord-orange">CLAIR AMÉLIORE.</span>
             </h2>
             <p className="text-white/60 mb-12 font-light text-xl leading-relaxed">
-              Le marquage est le premier élément de sécurité de vos infrastructures. Nous assurons une exécution nette qui valorise votre propriété.
+              Le marquage est un investissement direct dans la sécurité et l'organisation de vos infrastructures. Voici les bénéfices concrets pour votre site.
             </p>
-            <div className="space-y-10">
+            <div className="grid sm:grid-cols-2 gap-x-10 gap-y-12">
               {benefits.map((benefit, i) => (
                 <div key={i} className="flex gap-6">
                   <div className="w-1 h-auto bg-nord-orange shrink-0"></div>
                   <div>
-                    <h3 className="text-white font-black uppercase tracking-tight mb-2">{benefit.title}</h3>
-                    <p className="text-white/40 font-light leading-relaxed text-sm">{benefit.desc}</p>
+                    <h3 className="text-white font-black uppercase tracking-tight mb-2 text-sm">{benefit.title}</h3>
+                    <p className="text-white/40 font-light leading-relaxed text-xs">{benefit.desc}</p>
                   </div>
                 </div>
               ))}
@@ -293,7 +305,7 @@ const Impact = () => {
             <div className="aspect-square bg-white/5 border border-white/10 p-4">
               <img 
                 src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1000&auto=format&fit=crop" 
-                alt="Marquage industriel" 
+                alt="Marquage industriel concept" 
                 className="w-full h-full object-cover grayscale opacity-40"
                 referrerPolicy="no-referrer"
               />
@@ -312,32 +324,32 @@ const Process = () => {
   const steps = [
     {
       num: "01",
-      title: "Évaluation",
-      desc: "Analyse sur place de vos besoins, mesure des surfaces et identification des contraintes techniques."
+      title: "Consultation",
+      desc: "Analyse de vos besoins spécifiques, mesure des surfaces et évaluation des contraintes techniques."
     },
     {
       num: "02",
       title: "Planification",
-      desc: "Conception du plan de marquage optimisé et sélection des matériaux adaptés à votre usage."
+      desc: "Élaboration d'un plan de marquage optimisé et choix des matériaux selon l'usage de la surface."
     },
     {
       num: "03",
       title: "Préparation",
-      desc: "Nettoyage rigoureux de la surface pour assurer une adhérence maximale de la peinture."
+      desc: "Nettoyage et préparation rigoureuse du support pour garantir une adhérence maximale de la peinture."
     },
     {
       num: "04",
-      title: "Exécution",
-      desc: "Application précise avec équipement de pointe et contrôle de qualité rigoureux."
+      title: "Réalisation",
+      desc: "Application précise avec un équipement professionnel pour un résultat net et durable."
     }
   ];
 
   return (
-    <section id="process" className="py-32 bg-white">
+    <section id="process" className="py-32 md:py-48 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-24">
-          <span className="text-nord-orange font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-6 block">Méthodologie</span>
-          <h2 className="text-4xl md:text-6xl font-black text-black tracking-tighter leading-[0.95] uppercase">NOTRE PROCESSUS<br /><span className="text-nord-orange">OPÉRATIONNEL.</span></h2>
+          <span className="text-nord-orange font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-6 block">Méthode de travail</span>
+          <h2 className="text-4xl md:text-6xl font-black text-black tracking-tighter leading-[0.95] uppercase">NOTRE PROCESSUS<br /><span className="text-nord-orange">DE RÉALISATION.</span></h2>
         </div>
 
         <div className="grid md:grid-cols-4 gap-px bg-black/5 border border-black/5">
@@ -451,17 +463,17 @@ const ServiceArea = () => {
           <div>
             <span className="text-nord-orange font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-6 block">Territoire</span>
             <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-[0.95] mb-10 uppercase">
-              LONGUEUIL &<br /><span className="text-nord-orange">RIVE-SUD.</span>
+              LAVAL &<br /><span className="text-nord-orange">RIVE-NORD.</span>
             </h2>
             <p className="text-white/60 text-xl font-light mb-14 leading-relaxed">
-              Basés sur la Rive-Sud, nous desservons l'ensemble de la région métropolitaine avec une réactivité accrue pour les projets locaux.
+              Basés à Laval, nous desservons la Rive-Nord et l'ensemble de la région métropolitaine avec une réactivité accrue pour les projets locaux.
             </p>
             <div className="grid sm:grid-cols-2 gap-8">
               {[
-                "Longueuil & Brossard",
-                "Boucherville & St-Hubert",
-                "Montréal (Grand Montréal)",
-                "Laval & Couronne Nord"
+                "Laval & Blainville",
+                "Boisbriand & St-Eustache",
+                "Terrebonne & Mascouche",
+                "Mirabel & Grand Montréal"
               ].map((area, i) => (
                 <div key={i} className="flex items-center gap-4 text-white group">
                   <div className="w-2 h-2 bg-nord-orange group-hover:scale-150 transition-transform"></div>
@@ -477,11 +489,11 @@ const ServiceArea = () => {
               <MapPin className="text-nord-orange w-10 h-10" />
               <div>
                 <h3 className="text-white font-black uppercase tracking-tight text-xl">Service de Proximité</h3>
-                <p className="text-white/40 text-sm font-light">Intervention rapide garantie.</p>
+                <p className="text-white/40 text-sm font-light">Intervention rapide sur la Rive-Nord.</p>
               </div>
             </div>
             <p className="text-white/60 font-light italic leading-relaxed text-lg">
-              "Notre connaissance du terrain nous permet d'optimiser nos déplacements et de respecter vos échéanciers les plus serrés."
+              "Notre présence locale nous permet d'optimiser nos interventions et de garantir un service de marquage commercial de haute qualité à Laval."
             </p>
           </div>
         </div>
@@ -554,16 +566,16 @@ const FAQ = () => {
 
 const QuoteSection = () => {
   return (
-    <section id="quote" className="py-32 bg-black">
+    <section id="quote" className="py-32 md:py-48 bg-black">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
           <div>
-            <span className="text-nord-orange font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-6 block">Contact</span>
+            <span className="text-nord-orange font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-6 block">Soumission</span>
             <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-[0.95] mb-10 uppercase">
-              PRÊT À TRACER<br /><span className="text-nord-orange">VOTRE LIGNE?</span>
+              CONFIEZ-NOUS VOTRE<br /><span className="text-nord-orange">PROJET DE MARQUAGE.</span>
             </h2>
             <p className="text-white/60 mb-14 font-light text-xl leading-relaxed">
-              Obtenez une estimation gratuite pour votre projet de marquage. Réponse garantie sous 24 heures.
+              Obtenez une estimation gratuite et précise pour vos travaux de marquage à Laval et sur la Rive-Nord. Nous répondons rapidement à toutes les demandes.
             </p>
             
             <div className="space-y-10">
@@ -588,31 +600,40 @@ const QuoteSection = () => {
             </div>
           </div>
 
-          <div className="bg-zinc-900 p-12 shadow-2xl border border-white/5 relative">
+          <div className="bg-zinc-900 p-8 md:p-12 shadow-2xl border border-white/5 relative">
             <div className="absolute -top-px -left-px w-12 h-px bg-nord-orange"></div>
             <div className="absolute -top-px -left-px h-12 w-px bg-nord-orange"></div>
             
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid sm:grid-cols-2 gap-8">
+            <p className="text-white/40 text-[10px] uppercase tracking-widest font-black mb-8">Réponse rapide selon votre surface, votre secteur et vos besoins.</p>
+
+            <form className="space-y-6 md:space-y-8" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-3">
-                  <label className="text-[10px] uppercase tracking-widest text-white/40 font-black">Nom Complet</label>
-                  <input type="text" className="w-full bg-white/5 border-b border-white/10 py-4 text-white focus:border-nord-orange outline-none transition-colors" placeholder="Jean Dupont" />
+                  <label className="text-[10px] uppercase tracking-widest text-white/40 font-black">Nom</label>
+                  <input type="text" className="w-full bg-white/5 border-b border-white/10 py-4 text-white focus:border-nord-orange outline-none transition-colors" placeholder="Votre nom" />
                 </div>
                 <div className="space-y-3">
                   <label className="text-[10px] uppercase tracking-widest text-white/40 font-black">Entreprise</label>
-                  <input type="text" className="w-full bg-white/5 border-b border-white/10 py-4 text-white focus:border-nord-orange outline-none transition-colors" placeholder="Gestion Immobilière XYZ" />
+                  <input type="text" className="w-full bg-white/5 border-b border-white/10 py-4 text-white focus:border-nord-orange outline-none transition-colors" placeholder="Nom de l'entreprise" />
                 </div>
               </div>
-              <div className="space-y-3">
-                <label className="text-[10px] uppercase tracking-widest text-white/40 font-black">Email</label>
-                <input type="email" className="w-full bg-white/5 border-b border-white/10 py-4 text-white focus:border-nord-orange outline-none transition-colors" placeholder="jean@exemple.com" />
+              <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
+                <div className="space-y-3">
+                  <label className="text-[10px] uppercase tracking-widest text-white/40 font-black">Téléphone</label>
+                  <input type="tel" className="w-full bg-white/5 border-b border-white/10 py-4 text-white focus:border-nord-orange outline-none transition-colors" placeholder="(514) 000-0000" />
+                </div>
+                <div className="space-y-3">
+                  <label className="text-[10px] uppercase tracking-widest text-white/40 font-black">Courriel</label>
+                  <input type="email" className="w-full bg-white/5 border-b border-white/10 py-4 text-white focus:border-nord-orange outline-none transition-colors" placeholder="votre@courriel.com" />
+                </div>
               </div>
               <div className="space-y-3">
                 <label className="text-[10px] uppercase tracking-widest text-white/40 font-black">Type de Projet</label>
                 <select className="w-full bg-white/5 border-b border-white/10 py-4 text-white focus:border-nord-orange outline-none transition-colors appearance-none">
-                  <option className="bg-zinc-900">Stationnement</option>
-                  <option className="bg-zinc-900">Entrepôt</option>
+                  <option className="bg-zinc-900">Stationnement (Laval / Rive-Nord)</option>
+                  <option className="bg-zinc-900">Entrepôt & Logistique</option>
                   <option className="bg-zinc-900">Voie d'incendie</option>
+                  <option className="bg-zinc-900">Marquage Commercial</option>
                   <option className="bg-zinc-900">Autre</option>
                 </select>
               </div>
@@ -621,7 +642,7 @@ const QuoteSection = () => {
                 <textarea className="w-full bg-white/5 border-b border-white/10 py-4 text-white focus:border-nord-orange outline-none transition-colors h-32 resize-none" placeholder="Détails de votre projet..."></textarea>
               </div>
               <button className="w-full bg-nord-orange text-white py-6 font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-                Envoyer la demande
+                Demander une estimation
               </button>
             </form>
           </div>
@@ -644,7 +665,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-white/40 max-w-md font-light leading-relaxed mb-12 text-lg">
-              Expertise en marquage de surfaces commerciales et industrielles. Nous servons Longueuil et le Grand Montréal avec précision et durabilité.
+              Expertise en marquage de surfaces commerciales et industrielles. Nous servons Laval, la Rive-Nord et le Grand Montréal avec précision et durabilité.
             </p>
             <div className="flex gap-6">
               <div className="w-12 h-12 border border-white/10 flex items-center justify-center text-white/40 hover:text-nord-orange hover:border-nord-orange transition-all cursor-pointer group">
@@ -679,7 +700,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-4 text-white/40 text-xs">
                 <MapPin className="w-5 h-5 text-nord-orange" />
-                <span className="font-black uppercase tracking-widest leading-none">Longueuil, QC</span>
+                <span className="font-black uppercase tracking-widest leading-none">Laval, QC</span>
               </li>
             </ul>
           </div>
@@ -708,7 +729,7 @@ export default function App() {
       <Hero />
       <TrustBar />
       <Services />
-      <Impact />
+      <Results />
       <Process />
       <Markets />
       <WhyUs />
