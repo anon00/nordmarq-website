@@ -106,7 +106,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className="mt-4 bg-nord-orange text-white px-10 py-5 text-sm font-black uppercase tracking-widest"
               >
-                Estimation gratuite
+                Soumission Gratuite
               </a>
             </div>
           </motion.div>
@@ -139,11 +139,11 @@ const Hero = () => {
             <span className="text-nord-orange font-mono text-[10px] font-black uppercase tracking-[0.5em]">Laval • Rive-Nord • Grand Montréal</span>
           </div>
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white leading-[1.1] md:leading-[0.95] mb-8 md:mb-10 tracking-tighter uppercase">
-            MARQUAGE<br />
-            <span className="text-nord-orange">PROFESSIONNEL.</span>
+            MARQUAGE COMMERCIAL<br />
+            <span className="text-nord-orange">CLAIR & CONFORME.</span>
           </h1>
           <p className="text-base md:text-2xl text-white/60 mb-10 md:mb-14 font-light leading-relaxed max-w-2xl">
-            Traçage de lignes durable pour stationnements commerciaux et entrepôts industriels. Une exécution rigoureuse adaptée aux besoins des entreprises de Laval et de la Rive-Nord.
+            Optimisez la circulation et la sécurité de vos surfaces avec un traçage de lignes haute précision. Solutions durables pour stationnements et entrepôts à Laval et sur la Rive-Nord.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
             <a href="#quote" className="group bg-nord-orange text-white px-10 md:px-12 py-5 md:py-6 font-black uppercase tracking-widest flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-all text-xs md:text-sm">
@@ -172,13 +172,13 @@ const TrustBar = () => {
   ];
 
   return (
-    <div className="bg-black border-y border-white/10 py-12 md:py-16">
+    <div className="bg-black border-y border-white/10 py-12">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6">
           {trustPoints.map((point, index) => (
             <div key={index} className="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left group">
               <div className="text-nord-orange group-hover:scale-110 transition-transform p-3 bg-white/5 rounded-full">{point.icon}</div>
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 group-hover:text-white transition-colors max-w-[140px] md:max-w-none">{point.text}</span>
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 group-hover:text-white transition-colors max-w-[120px] md:max-w-none">{point.text}</span>
             </div>
           ))}
         </div>
@@ -190,39 +190,39 @@ const TrustBar = () => {
 const Services = () => {
   const services = [
     {
-      title: "Stationnements Commerciaux",
-      desc: "Marquage complet pour commerces, condos et institutions. Lignes de cases, flèches et symboles conformes.",
+      title: "Stationnements",
+      desc: "Marquage complet pour commerces, condos et institutions. Lignes de cases, flèches et symboles.",
       icon: <ParkingCircle className="w-10 h-10" />,
     },
     {
       title: "Entrepôts & Logistique",
-      desc: "Marquage de sécurité intérieur, zones de marche, corridors de chariots élévateurs et numérotation précise.",
+      desc: "Marquage de sécurité intérieur, zones de marche, corridors de chariots élévateurs et numérotation.",
       icon: <Warehouse className="w-10 h-10" />,
     },
     {
-      title: "Voies d'Incendie & Bornes VE",
-      desc: "Signalisation réglementaire pour accès d'urgence et espaces de recharge pour véhicules électriques.",
+      title: "Voies d'Incendie",
+      desc: "Marquage réglementaire rouge haute visibilité pour accès d'urgence et bornes-fontaines.",
       icon: <Flame className="w-10 h-10" />,
     },
     {
-      title: "Thermoplastique Durable",
-      desc: "Applications haute résistance pour zones à trafic intense, offrant une longévité supérieure.",
+      title: "Bornes de Recharge VE",
+      desc: "Signalisation spécialisée pour espaces de véhicules électriques avec peinture haute performance.",
+      icon: <BatteryCharging className="w-10 h-10" />,
+    },
+    {
+      title: "Thermoplastique",
+      desc: "Applications durables pour zones à haut trafic, offrant une longévité supérieure à la peinture standard.",
       icon: <Zap className="w-10 h-10" />,
     },
     {
       title: "Marquages Spéciaux",
-      desc: "Logos personnalisés, signalisation sur mesure et marquages techniques spécifiques à votre secteur.",
+      desc: "Logos personnalisés, jeux de cours d'école, terrains sportifs et signalisation sur mesure.",
       icon: <Construction className="w-10 h-10" />,
-    },
-    {
-      title: "Conformité & Sécurité",
-      desc: "Mise aux normes de vos installations pour assurer la sécurité des usagers et le respect des règlements.",
-      icon: <ShieldCheck className="w-10 h-10" />,
     },
   ];
 
   return (
-    <section id="services" className="py-24 md:py-48 bg-white">
+    <section id="services" className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">
           <div className="max-w-2xl">
@@ -232,13 +232,13 @@ const Services = () => {
             </h2>
           </div>
           <p className="text-black/40 max-w-sm font-light leading-relaxed text-lg">
-            Nous utilisons des produits de qualité supérieure pour assurer une visibilité maximale et une durabilité accrue à Laval et sur la Rive-Nord.
+            Nous utilisons des produits de qualité supérieure pour assurer une visibilité maximale et une durabilité accrue face au climat québécois.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-black/5 border border-black/5">
           {services.map((s, i) => (
-            <div key={i} className="bg-white p-10 md:p-12 hover:bg-black group transition-all duration-500">
+            <div key={i} className="bg-white p-12 hover:bg-black group transition-all duration-500">
               <div className="text-nord-orange mb-10 group-hover:scale-110 transition-transform duration-500 origin-left">
                 {s.icon}
               </div>
@@ -263,12 +263,12 @@ const Results = () => {
       desc: "Des lignes nettes et contrastées pour une compréhension immédiate des zones de circulation.",
     },
     {
-      title: "Circulation Fluide",
-      desc: "Optimisation de l'espace pour maximiser le nombre de cases et améliorer le flux du trafic.",
-    },
-    {
       title: "Sécurité Accrue",
       desc: "Réduction des risques d'accidents grâce à une signalisation claire pour piétons et véhicules.",
+    },
+    {
+      title: "Circulation Fluide",
+      desc: "Optimisation de l'espace pour maximiser le nombre de cases et améliorer le flux du trafic.",
     },
     {
       title: "Zones Mieux Définies",
@@ -277,7 +277,7 @@ const Results = () => {
   ];
 
   return (
-    <section className="py-24 md:py-48 bg-black overflow-hidden">
+    <section className="py-32 md:py-48 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
@@ -324,23 +324,23 @@ const Process = () => {
   const steps = [
     {
       num: "01",
-      title: "Consultation",
-      desc: "Analyse de vos besoins spécifiques, mesure des surfaces et évaluation des contraintes techniques."
+      title: "Analyse & Planification",
+      desc: "Étude rigoureuse des plans, mesure des surfaces et établissement d'un calendrier d'intervention optimisé."
     },
     {
       num: "02",
-      title: "Planification",
-      desc: "Élaboration d'un plan de marquage optimisé et choix des matériaux selon l'usage de la surface."
+      title: "Préparation Technique",
+      desc: "Nettoyage industriel et délimitation précise pour garantir une adhérence maximale et des lignes nettes."
     },
     {
       num: "03",
-      title: "Préparation",
-      desc: "Nettoyage et préparation rigoureuse du support pour garantir une adhérence maximale de la peinture."
+      title: "Exécution Normée",
+      desc: "Application avec équipement de pointe et matériaux certifiés selon les standards de l'industrie."
     },
     {
       num: "04",
-      title: "Réalisation",
-      desc: "Application précise avec un équipement professionnel pour un résultat net et durable."
+      title: "Contrôle & Livraison",
+      desc: "Inspection finale de la conformité et remise d'un site propre, sécuritaire et prêt à l'usage."
     }
   ];
 
@@ -449,7 +449,7 @@ const WhyUs = () => {
 
 const ServiceArea = () => {
   return (
-    <section className="py-24 md:py-48 bg-black relative overflow-hidden">
+    <section className="py-32 bg-black relative overflow-hidden">
       {/* Abstract Map Background */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <svg width="100%" height="100%" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -525,7 +525,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 md:py-48 bg-white">
+    <section id="faq" className="py-32 bg-white">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-24">
           <span className="text-nord-orange font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-6 block">Questions</span>
