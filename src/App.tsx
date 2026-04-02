@@ -124,8 +124,11 @@ const Hero = () => {
            style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
       
       {/* Background Image Overlay */}
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black"></div>
+      <div
+  className="absolute inset-0 bg-cover bg-center opacity-30"
+  style={{ backgroundImage: "url('/hero-nordmarq.jpg')" }}
+></div>
+<div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black"></div>
 
       <div className="relative max-w-7xl mx-auto px-6 w-full">
         <motion.div 
@@ -304,11 +307,10 @@ const Results = () => {
           <div className="relative">
             <div className="aspect-square bg-white/5 border border-white/10 p-4">
               <img 
-                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1000&auto=format&fit=crop" 
-                alt="Marquage industriel concept" 
-                className="w-full h-full object-cover grayscale opacity-40"
-                referrerPolicy="no-referrer"
-              />
+  src="/hero-nordmarq.jpg"
+  alt="Stationnement commercial fraîchement marqué" 
+  className="w-full h-full object-cover grayscale opacity-40"
+ />
             </div>
             {/* Decorative Frame */}
             <div className="absolute -top-6 -right-6 w-32 h-32 border-t-2 border-r-2 border-nord-orange opacity-40"></div>
