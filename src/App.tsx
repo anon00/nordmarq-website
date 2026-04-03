@@ -20,6 +20,8 @@ import {
   MoveRight
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Routes, Route } from 'react-router-dom';
+import ParkingLotMarkingLaval from './pages/ParkingLotMarkingLaval';
 
 // --- Components ---
 
@@ -34,11 +36,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
-    { name: 'Processus', href: '#process' },
-    { name: 'Marchés', href: '#markets' },
-    { name: 'FAQ', href: '#faq' },
-  ];
+  { name: 'Services', href: '/services/marquage-stationnement-laval' },
+  { name: 'Processus', href: '#process' },
+  { name: 'Marchés', href: '#markets' },
+  { name: 'FAQ', href: '#faq' },
+];
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-black/95 backdrop-blur-md py-4 shadow-2xl' : 'bg-transparent py-6 md:py-8'}`}>
@@ -762,7 +764,7 @@ const Footer = () => {
 
 // --- Main App ---
 
-export default function App() {
+function HomePage() {
   return (
     <div className="min-h-screen font-sans selection:bg-nord-orange selection:text-white bg-black">
       <Navbar />
@@ -779,5 +781,17 @@ export default function App() {
       <QuoteSection />
       <Footer />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route
+        path="/services/marquage-stationnement-laval"
+        element={<ParkingLotMarkingLaval />}
+      />
+    </Routes>
   );
 }
